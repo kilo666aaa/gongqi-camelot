@@ -1,0 +1,41 @@
+{
+  "name": "gongqi",
+  "version": "0.0.0",
+  "private": true,
+  "description": "共契：多人共同决策工具，当前处于M0基础验证阶段",
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11 <12"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "cloud:version": "tcb --version",
+    "cloud:help": "tcb --help",
+    "cloud:login": "tcb login --intl false",
+    "dev": "npm run dev --workspace @gongqi/web",
+    "build": "npm run typecheck && npm run build --workspace @gongqi/web",
+    "build:gateway": "node tools/build-r2.mjs --gateway-only",
+    "build:r2": "npm run build && node tools/build-r2.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:contracts": "vitest run tests/contracts",
+    "test:domain": "vitest run tests/domain/rules.test.ts",
+    "test:domain:v2": "vitest run tests/domain/v2",
+    "test:pg:v2": "vitest run tests/integration/pg-v2"
+  },
+  "devDependencies": {
+    "@cloudbase/cli": "3.8.11",
+    "@playwright/test": "^1.64.1",
+    "@types/pg": "^8.23.1",
+    "rolldown": "1.2.16",
+    "typescript": "7.0.2",
+    "vitest": "5.0.5"
+  },
+  "dependencies": {
+    "@cloudbase/js-sdk": "3.10.4",
+    "@cloudbase/node-sdk": "3.18.7",
+    "pg": "^8.23.1"
+  }
+}

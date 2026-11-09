@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env*
+!.env.example
+cloudbaserc.json
+.cloudbase/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo

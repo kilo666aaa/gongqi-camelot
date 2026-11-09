@@ -1,0 +1,11 @@
+{
+  "name": "@gongqi/domain",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./v2": "./src/v2/index.ts"
+  },
+  "dependencies": { "@gongqi/contracts": "0.0.0" }
+}

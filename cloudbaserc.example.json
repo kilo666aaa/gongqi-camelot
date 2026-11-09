@@ -1,0 +1,20 @@
+{
+  "envId": "YOUR_CLOUDBASE_ENV_ID",
+  "functionRoot": "cloudbase/dist",
+  "functions": [
+    {
+      "name": "gateway",
+      "handler": "index.main",
+      "runtime": "Nodejs18.15",
+      "timeout": 30,
+      "memorySize": 256,
+      "type": "Event",
+      "installDependency": true,
+      "envVariables": {
+        "NODE_ENV": "production",
+        "TCB_ENV": "YOUR_CLOUDBASE_ENV_ID"
+      }
+    }
+  ]
+}
+
